@@ -1,0 +1,138 @@
+$primary-color: #467280;
+$secondary-color: #D9F6FF;
+$tertier-color: #8CE4FF;
+$extra-color1: #6C7B80;
+$extra-color2: #70B7CC;
+
+$font-color: #F7FCFF;
+
+$font-logo: 'Poppins', sans-serif;
+$font-heading: 'Roboto', sans-serif;
+$font-content: 'Roboto Slab', serif;;
+
+.App {
+  text-align: center;
+  grid-template-columns: 50% 50%;
+  display: grid;
+  grid-template-areas:  
+    "navbar navbar"
+    "content content";
+}
+
+.home{
+  display: grid;
+  grid-area: content;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "search search"
+                        "sort sort"
+                        "product product";
+}
+
+.navbar{
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+  background-color: $primary-color;
+  grid-area: navbar;
+
+  &__title{
+    color: $font-color;
+    font-size: 1.6rem;
+    font-family: $font-logo;
+    font-weight: 800;
+  }
+
+  .fa-user-circle{
+    color: $font-color;
+    font-size: 1.7rem;
+    align-self: center;
+  }
+}
+
+.search {
+  display: flex;
+  margin: 1rem auto;
+  justify-content: center;
+  border-radius: 2px;
+  grid-area: search;
+
+  &__input {
+    border: none;
+    border: 1px solid hsl(0,0%,80%);;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    font-family: 'Roboto Slab', serif;
+    border-radius: 2px;
+  }
+
+  &__btn {
+    border: none;
+    padding: .25rem .725rem;
+    background-color: $font-color;
+    outline: none;
+  
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  
+  .fa-search {
+    color: $primary-color;
+  }
+}
+
+.sort {
+  grid-area: sort;
+  justify-self: center;
+  margin: .725rem auto;
+  width: 6rem;
+}
+
+.productList {
+  grid-area: product;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.product {
+  width: 90%;
+  margin: 0;
+  display: grid;
+  justify-self: center;
+
+  &__img{
+    display: block;
+    width: 100%;
+    min-height: 35vh;
+  }
+
+  &__title{
+    margin: 0;
+    margin-top: .5rem;
+    font-family: $font-heading;
+    color: $primary-color;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  &__stars{
+    padding: .725rem 0;
+    color: $tertier-color;
+  }
+
+  &__genre{
+    margin: 0;
+    font-family: $font-content;
+    color: $primary-color;
+  }
+
+  &__price{
+    margin: .5rem 0;
+    font-family: $font-content;
+    color: orangered;
+  }
+}
