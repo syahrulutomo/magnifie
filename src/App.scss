@@ -136,3 +136,9 @@ $font-content: 'Roboto Slab', serif;;
     color: orangered;
   }
 }
+
+.details{
+  grid-area: content;
+  display: flex;
+  flex-wrap: wrap;
+}
