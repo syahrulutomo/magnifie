@@ -4,7 +4,8 @@ $tertier-color: #8CE4FF;
 $extra-color1: #6C7B80;
 $extra-color2: #70B7CC;
 
-$font-color: #F7FCFF;
+$font-color-light: #F7FCFF;
+$font-color-dark: #222f3e;
 
 $font-logo: 'Poppins', sans-serif;
 $font-heading: 'Roboto', sans-serif;
@@ -38,17 +39,31 @@ $font-content: 'Roboto Slab', serif;;
   grid-area: navbar;
 
   &__title{
-    color: $font-color;
+    color: $font-color-light;
     font-size: 1.6rem;
     font-family: $font-logo;
     font-weight: 800;
-  }
-
-  .fa-user-circle{
-    color: $font-color;
-    font-size: 1.7rem;
     align-self: center;
   }
+
+  .balance-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .balance{
+      color: $secondary-color;
+      font-family: $font-content;
+      font-size: 1rem;
+      margin: 0 1rem 0 0;
+    }
+  
+    .fa-user-circle{
+      color: $font-color-light;
+      font-size: 1.7rem;
+    }
+  }
+
 }
 
 .search {
@@ -70,7 +85,7 @@ $font-content: 'Roboto Slab', serif;;
   &__btn {
     border: none;
     padding: .25rem .725rem;
-    background-color: $font-color;
+    background-color: $font-color-light;
     outline: none;
   
     &:hover{
@@ -87,7 +102,9 @@ $font-content: 'Roboto Slab', serif;;
   grid-area: sort;
   justify-self: center;
   margin: .725rem auto;
-  width: 6rem;
+  width: 10rem;
+  font-family: $font-content;
+  font-size: .8rem;
 }
 
 .productList {
@@ -100,7 +117,7 @@ $font-content: 'Roboto Slab', serif;;
 
 .product {
   width: 90%;
-  margin: 0;
+  margin: 0 0 1rem 0;
   display: grid;
   justify-self: center;
 
@@ -120,7 +137,7 @@ $font-content: 'Roboto Slab', serif;;
   }
 
   &__stars{
-    padding: .725rem 0;
+    padding: .5rem 0;
     color: $tertier-color;
   }
 
@@ -131,7 +148,7 @@ $font-content: 'Roboto Slab', serif;;
   }
 
   &__price{
-    margin: .5rem 0;
+    margin: .25rem 0;
     font-family: $font-content;
     color: orangered;
   }
@@ -139,6 +156,88 @@ $font-content: 'Roboto Slab', serif;;
 
 .details{
   grid-area: content;
-  display: flex;
-  flex-wrap: wrap;
+  padding: 1rem;
+
+    &__title{
+      color: $font-color-dark;
+    }
+
+    &__tagline{
+      font-family: $font-heading;
+      color: $extra-color1;
+    }
+
+    &__img{
+      max-width: 100%;
+    }
+
+    &__overview{
+      color: $font-color-dark;
+      font-family: $font-content;
+      text-align: justify;
+      font-size: 1rem;
+    }
+
+    &__rate{
+      color: $font-color-dark;
+      font-family: $font-content;
+      text-align: left;
+      font-size: 1rem;
+    }
+
+    &__duration{
+      color: $font-color-dark;
+      font-family: $font-content;
+      text-align: justify;
+      font-size: 1rem;
+    }
+
+    &__price{
+      color: orangered;
+      font-family: $font-content;
+      text-align: justify;
+      font-size: 1rem;
+    }
+
+    &__own{
+
+      &-yes{
+        font-family: $font-content;
+        font-size: 1rem;
+        color: $font-color-dark;
+        text-align: left;
+      }
+
+      &-no{
+        font-family: $font-content;
+        font-size: 1rem;
+        color: $extra-color2;
+        text-align: left;
+      }
+    }
+
+    &__buy{
+      box-sizing: border-box;
+      border: none;
+      border-radius: 3px;
+      background-color: $primary-color;
+      color: $font-color-light;
+      margin: 1rem 0;
+      padding: .725rem 1.5rem;
+      font-family: $font-content;
+      font-size: 1rem;
+
+      &-disabled{
+        box-sizing: border-box;
+      border: none;
+      border-radius: 3px;
+      background-color: $extra-color1;  
+      color: grey;
+      margin: 1rem 0;
+      padding: .725rem 1.5rem;
+      font-family: $font-content;
+      font-size: 1rem;
+        
+      }
+    }
 }

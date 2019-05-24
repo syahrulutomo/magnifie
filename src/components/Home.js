@@ -2,21 +2,47 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import Sort from './Sort';
 import ProductList from './ProductList';
+import { connect } from 'react-redux';
+import { fetchMovie } from './../actions/displayHome';
+
 
 class Home extends React.Component {
   constructor(props){
     super(props);
   }
 
+  componentDidMount(){
+    this.props.onFetchMovie();
+  }
+
+  componentWillUnmount(){
+    
+  }
+
   render(){
+    const movies = this.props.movies;
     return(
       <div className="home">
-        <SearchBar />
+        <SearchBar/>
         <Sort />
-        <ProductList />
+        <ProductList movies={movies}/>
       </div>
     )
   }
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    movies: state.movies.movies,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onFetchMovie : () => {
+      dispatch(fetchMovie())
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Home);
