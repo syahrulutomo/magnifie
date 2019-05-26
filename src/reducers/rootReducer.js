@@ -9,7 +9,7 @@ const defaultState = {
     sortBy: '',
     balance: 100000,
     movies: [],
-    collection: []
+    collection: [],
 }
 
 const moviesReducer = (state = defaultState, action) => {
@@ -23,8 +23,7 @@ const moviesReducer = (state = defaultState, action) => {
     case RECEIVED_SEARCH:
       return Object.assign({}, state, { isLoading: false, movies: [...action.payload]});
     case BUY:
-    console.log(action.details);
-      return Object.assign({}, state, { balance: state.balance - action.payload, collection: [...state.collection, action.details] });
+      return Object.assign({}, state, { balance: state.balance - action.payload, collection: [...state.collection, action.id] });
     default: 
         return state;
   }

@@ -28,6 +28,9 @@ class Details extends Component {
   componentWillUnmount(){
     document.removeEventListener('click', this.getPrice);
     document.removeEventListener('click', this.formattedPrice);
+    this.setState({
+      id: ''
+    })
   }
 
   getPrice(rate){
@@ -46,10 +49,11 @@ class Details extends Component {
   }
 
   render() {
+    const genres = this.props.details['genres'] === undefined ? '' : this.props.details['genres'][0]['name'];
     const img = this.props.details['poster_path'] === null ? grey : 'https://image.tmdb.org/t/p/w300/'+this.props.details['poster_path'];
     const price = this.getPrice(this.props.details['vote_average']);
     return (
-      <div className="details">
+      <div className="details" key={this.props.details.id}>
         <h1 className="details__title"> {this.props.details.title} </h1>
         <p className="details__tagline">{this.props.details.tagline}</p>
         <img className="details__img" 
@@ -57,22 +61,21 @@ class Details extends Component {
               alt={'image of '+this.props.details.title} />
         <p className="details__overview">{this.props.details.overview}</p>
         <p className="details__rate">Rate: {this.props.details['vote_average']}</p>
+        <p className="details__duration">Genre: { genres }</p>
         <p className="details__duration">Duration: {this.props.details['runtime']} minutes</p>
         <p className="details__price">Price : Rp { this.formattedPrice(price) }</p>
-        { this.props.movies.collection.filter(item => item.id).indexOf(this.state.id) > -1 ? <p className="details__own-yes">You already have this movie</p> : <p className="details__own-no">You don't have this movie</p> }
-        <Link to="/">{ this.props.movies.collection.filter(item => item.id).indexOf(this.state.id) > -1 ? <button className="details__buy-disabled" disabled>Buy</button> : <button className="details__buy" onClick={() => this.props.onBuy(this.state.id,price)}>Buy</button>}</Link>
+        { (this.props.movies.collection.indexOf(this.props.details.id) > -1) ? <p className="details__own-yes">You already have this movie</p> : <p className="details__own-no">You don't have this movie</p> }
+       { (this.props.movies.collection.indexOf(this.props.details.id) > -1) ? <button className="details__buy-disabled" disabled>Buy</button> : <button className="details__buy" onClick={() => this.props.onBuy(this.props.details.id ,price)}>Buy</button>}
       </div>
     )
   }
 }
-
 const mapStateToProps = (state) => {
   return {
     details: state.details.details,
     movies: state.movies,
   }
 }
-
 const mapDispatchToProps = (dispatch) => {
   return {
     onFetchDetails: (id) => {
@@ -83,5 +86,4 @@ const mapDispatchToProps = (dispatch) => {
     },
   }
 } 
-
 export default connect(mapStateToProps, mapDispatchToProps)(Details);

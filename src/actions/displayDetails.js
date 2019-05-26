@@ -32,7 +32,7 @@ export const fetchDetails = (id) => {
 
     fetch('https://api.themoviedb.org/3/movie/'+id+'?api_key='+API_KEY+'&language=en-US')
     .then( res => res.json() )
-    .then( data => {dispatch(receivedDetails(data)); console.log(data) });
+    .then( data => {dispatch(receivedDetails(data))});
 
   }
 }

@@ -118,8 +118,29 @@ $font-content: 'Roboto Slab', serif;;
 .product {
   width: 90%;
   margin: 0 0 1rem 0;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   justify-self: center;
+  position: relative;
+  flex-direction: column;
+
+  .indicator{
+    float: left;
+    position: absolute;
+    right: -5px;
+    background-color: orangered;
+    font-size: .9rem;
+    padding: .25rem;
+
+    &-label{
+      font-family: $font-content;
+      color: $font-color-light;
+      display: inline-block;
+      margin: auto;
+      align-self: center;
+    }
+
+  }
 
   &__img{
     display: block;

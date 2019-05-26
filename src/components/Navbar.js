@@ -9,7 +9,7 @@ class Navbar extends Component {
         <Link className="link" to="/"><h1 className="navbar__title">Magnifie</h1></Link>
         <div className="balance-wrapper">
           <p className="balance">saldo: {this.props.movies.balance}</p>
-          <Link to="/profile"><i className="fas fa-user-circle"></i></Link>
+        <i className="fas fa-user-circle"></i>
         </div>       
       </nav>
     )

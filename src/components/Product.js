@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import grey from './../img/grey.jpg';
-import {API_KEY} from './../APIkey';
-import axios from 'axios';
+
 
 class Product extends Component {
   constructor(props){
@@ -10,40 +10,50 @@ class Product extends Component {
     this.state = {
       genres: []
     }
+    this.getPrice = this.getPrice.bind(this);
+    this.formattedPrice = this.formattedPrice.bind(this);  
   }
 
-  signal = axios.CancelToken.source();
-
-  componentDidMount(){
-    const that = this;
-    const genreIds = [...this.props.movie['genre_ids']];
-
-    axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key='+API_KEY+'&language=en-US',{ cancelToken: this.signal.token, })
-    .then(res => res.json())
-    .then(data => { 
-      that.setState(() => ({ genres: [...data['genres']].filter(current => genreIds.indexOf(current.id) > -1 ) }));
-    })
-    .catch(err => console.log(err.message));
+  getPrice(rate){
+    if(rate < 3)
+      return 3500;
+    else if(rate > 3 && rate <= 6)
+      return 8250;
+    else if(rate > 6 && rate <= 8)
+      return 16350;
+    else if(rate > 8 && rate <= 10)
+      return 21250;
   }
 
-  componentWillMount(){
-    this.signal.cancel('Api is being canceled');
+  formattedPrice(number) {
+    return String(number).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
   }
-  
+
   render(){   
-    const genre = this.state.genres.length === 0 ? 'waiting...' : this.state.genres[0]['name'];
     const img = this.props.movie['poster_path'] === null ? grey : 'https://image.tmdb.org/t/p/w300/'+this.props.movie['poster_path'];
     const id = this.props.movie.id;
     const slug = this.props.movie.title.replace(" ","-");
+    const price = this.getPrice(this.props.movie['vote_average']);
+    const rate = Math.floor(this.props.movie['vote_average'] / 2 );
+    let rateArr = [];
+    for(let i = 1; i <= rate; i++){
+      rateArr.push(<i key={i} className="fas fa-star"></i>);
+    }
     return(
       <div className="product">
+        {
+          (this.props.movies.collection.indexOf(this.props.movie.id) > -1) ? 
+            (<div className="indicator">
+                <p className="indicator-label">owned</p>
+              </div>
+            ) : ''
+        }
         <Link to={`details/${id}-${slug}`}>
           <img className="product__img" src={img} alt={'image of '+this.props.movie['title']} />
         </Link>
         <p className="product__title">{this.props.movie['title']}</p>
-        <div className="product__stars"><i className="fas fa-star"></i><i className="fas fa-star"></i></div>
-        <p className="product__genre">{genre}</p>
-        <p className="product__price">Rp 12rb</p>
+        <div className="product__stars">{ (rateArr.length > 0) ? rateArr : 'No rate' }</div>
+        <p className="product__price">{ price }</p>
       </div>
       
     );
@@ -51,4 +61,10 @@ class Product extends Component {
   
 }
 
-export default Product;
+const mapStateToProps = (state) => {
+  return{
+    movies: state.movies
+  }
+}
+
+export default connect(mapStateToProps)(Product);

@@ -15,10 +15,6 @@ class Home extends React.Component {
     this.props.onFetchMovie();
   }
 
-  componentWillUnmount(){
-    
-  }
-
   render(){
     const movies = this.props.movies;
     return(

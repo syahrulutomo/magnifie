@@ -24,7 +24,9 @@ export const fetchMovie = () => {
     fetch('https://api.themoviedb.org/3/discover/movie?api_key='+API_KEY+
     '&region=id&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&release_date.gte=2019-04-01')
     .then( res => res.json() )
-    .then( data => {dispatch(receivedHome(data['results'])); console.log(data['results']) });
+    .then( data => {
+      dispatch(receivedHome(data['results'])); 
+    });
 
   }
 }
