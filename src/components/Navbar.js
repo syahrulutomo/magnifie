@@ -8,7 +8,7 @@ class Navbar extends Component {
       <nav className="navbar">
         <Link className="link" to="/"><h1 className="navbar__title">Magnifie</h1></Link>
         <div className="balance-wrapper">
-          <p className="balance">saldo: {this.props.movies.balance}</p>
+          <p className="balance">saldo: { String(this.props.movies.balance).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') }</p>
         <i className="fas fa-user-circle"></i>
         </div>       
       </nav>

@@ -1,10 +1,9 @@
 import React from 'react';
 import SearchBar from './SearchBar';
-import Sort from './Sort';
+import Sort from './SortBar';
 import ProductList from './ProductList';
 import { connect } from 'react-redux';
 import { fetchMovie } from './../actions/displayHome';
-
 
 class Home extends React.Component {
   constructor(props){

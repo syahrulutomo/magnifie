@@ -6,10 +6,11 @@ class ProductList extends React.Component {
     let list = this.props.movies.map((current,index) => <Product movie={current} key={current['id']}/>);
     return (
       <div className="productList">
-        { list }
+        {list}
       </div>
     )
   }
 }
+
 
 export default ProductList;
