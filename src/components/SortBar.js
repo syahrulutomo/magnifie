@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { sortByTitle, sortByRate, sortByPrice } from './../actions/sort';
 
-class Sort extends React.Component {
+export class SortBar extends React.Component {
   constructor(props){
     super(props);
     this.state ={
@@ -27,7 +27,7 @@ class Sort extends React.Component {
 
   render() {
     return(
-        <select className="sort-bar " onChange={this.handleChange} value={this.state.value}>
+        <select className="sort-bar " onChange={this.handleChange} value={this.state.value} data-test="sort-bar">
           <option value="price">Sort By Price</option>
           <option value="title">Sort By Title</option>
           <option value="rate">Sort By Rate</option>
@@ -50,4 +50,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null,mapDispatchToProps)(Sort);
+export default connect(null,mapDispatchToProps)(SortBar);

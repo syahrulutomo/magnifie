@@ -27,13 +27,13 @@ const getPrice = (rate) => {
     return 21250;
 }
 
-export const fetchMovie = () => {
+export const fetchMovie = (page) => {
   return function(dispatch) {
 
     dispatch(fetchHome());
 
     fetch('https://api.themoviedb.org/3/discover/movie?api_key='+API_KEY+
-    '&region=id&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&release_date.gte=2019-04-01')
+    '&region=id&sort_by=popularity.desc&include_adult=false&include_video=false&page='+1+'&release_date.gte=2019-04-01')
     .then( res => res.json() )
     .then( data => {
       const results = data['results'];

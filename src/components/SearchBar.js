@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchSearch } from './../actions/search';
 
-class SearchBar extends React.Component {
+export class SearchBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -24,22 +24,17 @@ class SearchBar extends React.Component {
 
   render(){
     return(
-      <div className="search">
+      <div className="search" data-test="search">
         <input  type="text" 
                 className="search__input" 
                 placeholder="looking for something?" 
                 onChange={this.handleChange}
                 value={this.state.text}
+                data-test="search__input"
         />
-        <button className="search__btn" onClick={this.handleClick}><i className="fas fa-search"></i></button>
+        <button className="search__btn" onClick={this.handleClick} data-test="button-search"><i className="fas fa-search"></i></button>
       </div>
     );
-  }
-}
-
-const mapStateToProps = (state) => {
-  return {
-    movies: state.movies
   }
 }
 
@@ -50,4 +45,4 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);
