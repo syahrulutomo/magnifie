@@ -3,6 +3,7 @@ import { FETCHING_DETAILS, RECEIVED_DETAILS ,BUY } from './../actions/displayDet
 import { FETCHING_SEARCH, RECEIVED_SEARCH } from './../actions/search';
 import { SORT_BY_TITLE, SORT_BY_PRICE, SORT_BY_RATE } from './../actions/sort.js';
 import { combineReducers } from 'redux';
+import { REMOVE_MOVIE } from '../actions/user';
 
 const defaultState = {
     isLoading: false,
@@ -42,15 +43,22 @@ const moviesReducer = (state = defaultState, action) => {
     case SORT_BY_RATE:
       let moviesRate = state.movies;
       moviesRate = moviesRate.sort( (a,b) =>{
-        return a['vote_average'] - b['vote_average'];
+        return b['vote_average'] - a['vote_average'];
       });
       return Object.assign({}, state, { movies: [...moviesRate] });
     case SORT_BY_PRICE:
       let moviesPrice = state.movies;
       moviesPrice = moviesPrice.sort( (a,b) =>{
-        return a.price - b.price;
+        return b.price - a.price;
       });
       return Object.assign({}, state, { movies: [...moviesPrice] });
+    case REMOVE_MOVIE:
+      if(state.collection.length > 0){
+        const begin = state.collection.slice(0,state.collection.indexOf(action.id));
+        const end = state.collection.slice(state.collection.indexOf(action.id), state.collection.length);
+        return Object.assign({}, state, { collection: [...begin, ...end ] });
+      }
+      return state;
     default: 
       return state;
   }

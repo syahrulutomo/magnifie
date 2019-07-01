@@ -9,7 +9,7 @@ export class Navbar extends Component {
         <Link className="link" to="/"><h1 className="navbar__title" data-test="navbar__title">Magnifie</h1></Link>
         <div className="balance-wrapper">
           <p className="balance">saldo: { String(this.props.movies.balance).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') }</p>
-        <i className="fas fa-user-circle"></i>
+          <Link className="link" to="/user"><i className="fas fa-user-circle"></i></Link>
         </div>       
       </nav>
     )

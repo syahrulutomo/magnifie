@@ -4,13 +4,13 @@ export const FETCHING_DETAILS = 'FETCHING_DETAILS';
 export const RECEIVED_DETAILS = 'RECEIVED_DETAILS';
 export const BUY = 'BUY';
 
-const fetchingDetails = () => {
+export const fetchingDetails = () => {
   return {
       type: FETCHING_DETAILS
   }
 }
 
-const receivedDetails= (data) => {
+export const receivedDetails= (data) => {
     return {
         type: RECEIVED_DETAILS,
         payload: data

@@ -15,7 +15,9 @@ export class Product extends Component {
   }
 
   render(){   
-    const img = this.props.movie['poster_path'] === null ? grey : 'https://image.tmdb.org/t/p/w500/'+this.props.movie['poster_path'];
+    const img = this.props.movie['poster_path'] === null ? grey : this.props.movie['poster_path'];
+    const src = 'https://image.tmdb.org/t/p/w300/'+this.props.movie['poster_path'];
+    const srcset = `https://image.tmdb.org/t/p/w185/${img} 320w, https://image.tmdb.org/t/p/w500/${img} 500w, https://image.tmdb.org/t/p/original/${img} 1000w`;
     const id = this.props.movie.id;
     const slug = this.props.movie.title.replace(" ","-");
     const price = this.props.movie['price'];
@@ -34,7 +36,8 @@ export class Product extends Component {
             ) : ''
         }
         <Link to={`details/${id}-${slug}`}>
-          <img className="product__img" src={img} alt={'image of '+this.props.movie['title']} data-test="product__img"/>
+          <img className="product__img" srcSet={srcset}
+              src={src}  alt={'image of '+this.props.movie['title']} data-test="product__img"/>
         </Link>
         <p className="product__title" data-test="product__title">{this.props.movie['title']}</p>
         <div className="product__stars" data-test="product__stars">{ (rateArr.length > 0) ? rateArr : 'No rate' }</div>

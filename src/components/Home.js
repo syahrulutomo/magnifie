@@ -1,10 +1,16 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import SortBar from './SortBar';
-import ProductList from './ProductList';
+// import ProductList from './ProductList';
 import { connect } from 'react-redux';
 import { fetchMovie } from './../actions/displayHome';
 import PropTypes from 'prop-types';
+import Loadable from 'react-loadable';
+
+const LoadableComponent = Loadable({
+  loader: () => import('./ProductList'),
+  loading: () => <div>Loading...   </div>
+});
 
 export class Home extends React.Component {
   constructor(props){
@@ -24,7 +30,8 @@ export class Home extends React.Component {
       <div className="home" data-test="home">
         <SearchBar data-test="search"/>
         <SortBar data-test="sort"/>
-        <ProductList movies={movies} data-test="product-list"/>
+        {/* <ProductList movies={movies} data-test="product-list"/> */}
+        <LoadableComponent movies={movies} data-test="product-list" />
       </div>
     )
   }
