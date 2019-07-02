@@ -5,7 +5,6 @@
 /.pnp
 .pnp.js
 moviedb.txt
-APIkey.js
 
 # testing
 /coverage
