@@ -17,7 +17,7 @@ export class Product extends Component {
   render(){   
     const img = this.props.movie['poster_path'] === null ? grey : this.props.movie['poster_path'];
     const src = 'https://image.tmdb.org/t/p/w300/'+this.props.movie['poster_path'];
-    const srcset = `https://image.tmdb.org/t/p/w185/${img} 320w, https://image.tmdb.org/t/p/w500/${img} 500w, https://image.tmdb.org/t/p/original/${img} 1000w`;
+    const srcset = `https://image.tmdb.org/t/p/w185/${img} 320w, https://image.tmdb.org/t/p/w500/${img} 500w, https://image.tmdb.org/t/p/780w/${img} 1000w`;
     const id = this.props.movie.id;
     const slug = this.props.movie.title.replace(" ","-");
     const price = this.props.movie['price'];
