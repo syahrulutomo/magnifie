@@ -52,7 +52,7 @@ export class Details extends Component {
   render() {
     const img = this.props.details['poster_path'] === null ? grey : this.props.details['poster_path'];
     const src = 'https://image.tmdb.org/t/p/'+this.props.details['poster_path'];
-    const srcset = `https://image.tmdb.org/t/p/w300/${img} 320w, https://image.tmdb.org/t/p/w500/${img} 500w, https://image.tmdb.org/t/p/w300/${img} 1000w`;
+    const srcset = `https://image.tmdb.org/t/p/w300/${img} 320w, https://image.tmdb.org/t/p/w500/${img} 500w, https://image.tmdb.org/t/p/original/${img} 1000w`;
     const genres = this.props.details['genres'] === undefined ? '' : this.props.details['genres'][0]['name'];
     const price = this.getPrice(this.props.details['vote_average']);
     return (
