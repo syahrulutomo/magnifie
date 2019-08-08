@@ -1,0 +1,1 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/17499a63e9f2436eb508eca39c0850c6)](https://www.codacy.com/app/syahrulutomo/magnifie?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=syahrulutomo/magnifie&amp;utm_campaign=Badge_Grade)
