@@ -22,12 +22,15 @@
 * JEST & Enzyme
 * themoviedb API
 
-### screenshot
+### Screenshot
 
- |  | 
-
-![Alt text](/screenshot/mobile-view.png?raw=true "mobile-view") | ![Alt text](/screenshot/tablet-view.png?raw=true "tablet-view") | ![Alt text](/screenshot/laptop-view.png?raw=true "laptop-view")
-![Alt text](/screenshot/sortbytitle.png?raw=true "sortbytitle") | ![Alt text](/screenshot/sortbyrate.png?raw=true "sortbyrate") | ![Alt text](/screenshot/sortbyprice.png?raw=true "sortbyprice")
-![Alt text](/screenshot/search.png?raw=true "search") | ![Alt text](/screenshot/detail1.png?raw=true "detail1")
-| ![Alt text](/screenshot/detail2.png?raw=true "detail2")
-![Alt text](/screenshot/owned.png?raw=true "owned") |
+<img src="/screenshot/mobile-view.png" width="100" height="100"/>&nbsp;
+<img src="/screenshot/tablet-view.png" width="100" height="100"/>&nbsp;
+<img src="/screenshot/laptop-view.png" width="100" height="100"/>&nbsp;
+<img src="/screenshot/sortbytitle.png" width="100" height="100"/>&nbsp;
+<img src="/screenshot/sortbyrate.png" width="100" height="100"/>&nbsp;
+<img src="/screenshot/sortbyprice.png" width="100" height="100"/>&nbsp;
+<img src="/screenshot/search.png" width="100" height="100"/>&nbsp;
+<img src="/screenshot/detail1.png" width="100" height="100"/>&nbsp;
+<img src="/screenshot/detail2.png" width="100" height="100"/>&nbsp;
+<img src="/screenshot/owned.png" width="100" height="100"/>&nbsp;
