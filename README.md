@@ -24,13 +24,10 @@
 
 ### screenshot
 
-![Alt text](/screenshot/mobile-view.png?raw=true "mobile-view")
-![Alt text](/screenshot/tablet-view.png?raw=true "tablet-view")
-![Alt text](/screenshot/laptop-view.png?raw=true "laptop-view")
-![Alt text](/screenshot/sortbytitle-view.png?raw=true "sortbytitle")
-![Alt text](/screenshot/sortbyrate-view.png?raw=true "sortbyrate")
-![Alt text](/screenshot/sortbyprice.png?raw=true "sortbyprice")
-![Alt text](/screenshot/search.png?raw=true "search")
-![Alt text](/screenshot/detail1.png?raw=true "detail1")
-![Alt text](/screenshot/detail2.png?raw=true "detail2")
-![Alt text](/screenshot/owned.png?raw=true "owned")
+ |  | 
+
+![Alt text](/screenshot/mobile-view.png?raw=true "mobile-view") | ![Alt text](/screenshot/tablet-view.png?raw=true "tablet-view") | ![Alt text](/screenshot/laptop-view.png?raw=true "laptop-view")
+![Alt text](/screenshot/sortbytitle.png?raw=true "sortbytitle") | ![Alt text](/screenshot/sortbyrate.png?raw=true "sortbyrate") | ![Alt text](/screenshot/sortbyprice.png?raw=true "sortbyprice")
+![Alt text](/screenshot/search.png?raw=true "search") | ![Alt text](/screenshot/detail1.png?raw=true "detail1")
+| ![Alt text](/screenshot/detail2.png?raw=true "detail2")
+![Alt text](/screenshot/owned.png?raw=true "owned") |
