@@ -1,8 +1,10 @@
+<span>
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/17499a63e9f2436eb508eca39c0850c6)](https://www.codacy.com/app/syahrulutomo/magnifie?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=syahrulutomo/magnifie&amp;utm_campaign=Badge_Grade)
 
 ![Travis (.org)](https://img.shields.io/travis/syahrulutomo/magnifie)
 
 ![Uptime Robot status](https://img.shields.io/uptimerobot/status/m783175725-06de25fd4dcf80e3cb952836)
+</span>
 
 ### App Features
 
@@ -24,13 +26,13 @@
 
 ### Screenshot
 
-<img src="/screenshot/mobile-view.png" width="100" height="100"/>&nbsp;
-<img src="/screenshot/tablet-view.png" width="100" height="100"/>&nbsp;
-<img src="/screenshot/laptop-view.png" width="100" height="100"/>&nbsp;
-<img src="/screenshot/sortbytitle.png" width="100" height="100"/>&nbsp;
-<img src="/screenshot/sortbyrate.png" width="100" height="100"/>&nbsp;
-<img src="/screenshot/sortbyprice.png" width="100" height="100"/>&nbsp;
-<img src="/screenshot/search.png" width="100" height="100"/>&nbsp;
-<img src="/screenshot/detail1.png" width="100" height="100"/>&nbsp;
-<img src="/screenshot/detail2.png" width="100" height="100"/>&nbsp;
-<img src="/screenshot/owned.png" width="100" height="100"/>&nbsp;
+<img src="/screenshot/mobile-view.png" width="350" height="350"/>&nbsp;
+<img src="/screenshot/tablet-view.png" width="350" height="350"/>&nbsp;
+<img src="/screenshot/laptop-view.png" width="350" height="350"/>&nbsp;
+<img src="/screenshot/sortbytitle.png" width="350" height="350"/>&nbsp;
+<img src="/screenshot/sortbyrate.png" width="350" height="350"/>&nbsp;
+<img src="/screenshot/sortbyprice.png" width="350" height="350"/>&nbsp;
+<img src="/screenshot/search.png" width="350" height="350"/>&nbsp;
+<img src="/screenshot/detail1.png" width="350" height="350"/>&nbsp;
+<img src="/screenshot/detail2.png" width="350" height="350"/>&nbsp;
+<img src="/screenshot/owned.png" width="350" height="350"/>&nbsp;
