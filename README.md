@@ -21,15 +21,15 @@
 * JEST & Enzyme
 * themoviedb API
 
-### Screenshot
+### Screenshoots
 
 <img src="/screenshot/mobile-view.png" width="350" height="350"/>&nbsp;
 <img src="/screenshot/tablet-view.png" width="350" height="350"/>&nbsp;
-<img src="/screenshot/laptop-view.png" width="350" height="350"/>&nbsp;
+<img src="/screenshot/laptop-view.png" />&nbsp;
 <img src="/screenshot/sortbytitle.png" width="350" height="350"/>&nbsp;
 <img src="/screenshot/sortbyrate.png" width="350" height="350"/>&nbsp;
 <img src="/screenshot/sortbyprice.png" width="350" height="350"/>&nbsp;
 <img src="/screenshot/search.png" width="350" height="350"/>&nbsp;
-<img src="/screenshot/detail1.png" width="350" height="350"/>&nbsp;
-<img src="/screenshot/detail2.png" width="350" height="350"/>&nbsp;
-<img src="/screenshot/owned.png" width="350" height="350"/>&nbsp;
+<img src="/screenshot/detail1.png" />&nbsp;
+<img src="/screenshot/detail2.png" />&nbsp;
+<img src="/screenshot/owned.png" />&nbsp;
