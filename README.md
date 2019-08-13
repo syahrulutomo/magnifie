@@ -1,9 +1,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/17499a63e9f2436eb508eca39c0850c6)](https://www.codacy.com/app/syahrulutomo/magnifie?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=syahrulutomo/magnifie&amp;utm_campaign=Badge_Grade)
 
-![Travis (.org)](https://img.shields.io/travis/syahrulutomo/magnifie)
-
-![Uptime Robot status](https://img.shields.io/uptimerobot/status/m783175725-06de25fd4dcf80e3cb952836)
+![Uptime Robot status](https://img.shields.io/uptimerobot/status/m783265542-9ef34cad215640f5ffbfbd16)
 
 ### App Features
 
