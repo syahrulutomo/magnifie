@@ -37,7 +37,7 @@ export const fetchSearch = (text) => {
       dispatch(fetchingSearch(text));
 
       fetch('https://api.themoviedb.org/3/search/movie?api_key='+API_KEY
-      +'&language=en-US&query='+text+'&page=1&include_adult=false&primary_release_year=2019')
+      +'&language=en-US&query='+text+'&page=1')
       .then( res => res.json() )
       .then( data => {
         const results = data['results'];
